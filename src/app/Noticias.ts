@@ -5,7 +5,7 @@ export interface Noticia{
     titulo: string;
     descricao: string;
     imagem: string;
-    dataCriacao?: string;
+    dataHoraInclusao?: string;
     data_Atualizacao?: string;
     noticias?: [ { texto: string, usuario: string}];   
     comentarios?: [ { text: string; username: string}];
