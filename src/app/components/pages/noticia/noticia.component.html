@@ -1,0 +1,33 @@
+<h1>Pagina de Noticia Individual</h1>
+<div class="noticia" *ngIf="noticia">
+    <div *ngFor="let item of noticia">
+        <h1> {{ item.titulo}} </h1>
+        <img [src]="imageUrl" alt="">
+        <div class="about-noticia">
+            <h3>Sobre esta notícia:</h3>
+            <p> {{ item.descricao}}</p>
+        </div>
+        <div class="actions">
+            <h3>Ações:</h3>
+            <a href="/notice/edit/{{item.id}}" class="edit-btn">
+                <fa-icon [icon]="faEdit"></fa-icon>Editar
+            </a>
+            <button class="remove-btn" (click)="removeHandler(item.id!)">
+                <fa-icon [icon]="faTimes"></fa-icon> Excluir
+            </button>
+        </div>
+        <!-- TODO COMENTARIOS -->
+        <div class="comentarios">
+            <p>Comentários</p>
+            <!-- <h3>Comentários( {{ item.comentarios!.length > 0 ? item.comentarios!.length : 0}} )</h3>
+            <div *ngIf="item.comentarios!.length > 0; else noNoticia">
+               <div class="comment-container" *ngFor="let comentario of item.comentarios">
+               <p class="comment"> {{comentario.texto}} </p>
+               </div>
+            </div>
+            <ng-template #noNoticia>
+                <p>Não há comentários</p>
+            </ng-template> -->
+        </div>
+    </div>
+</div>

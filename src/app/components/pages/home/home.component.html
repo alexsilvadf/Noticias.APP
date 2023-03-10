@@ -1,0 +1,24 @@
+<div class="home-container">
+    <h1> Últimas Notícias</h1> 
+    <div class="search-container">
+        <form>
+            <fa-icon [icon]="faSearch"></fa-icon>
+            <input type="text" placeholder="Ou busque uma notícia" (input)="search($event)">
+        </form>
+    </div>
+    <div *ngIf="noticias.length > 0; else noNoticias">
+        <div class="moments-container">
+            <div class="moment" *ngFor="let noticia of noticias">       
+                <img [src]="noticia.imageUrl" alt="">
+                <h3> {{noticia.titulo}} </h3>    
+                <p class="date">Em: {{noticia.dataCriacao}} </p>                
+                <h3> {{noticia.titulo}} </h3> 
+                <h3> {{noticia.id}}</h3>
+                <p><a routerLink="notice/{{noticia.id}}">Detalhes</a></p>          
+            </div>
+        </div>
+    </div>
+    <ng-template #noNoticias>
+        <h1>Não há momentos cadastrados</h1>
+    </ng-template>
+</div>

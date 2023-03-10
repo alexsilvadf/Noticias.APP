@@ -1,0 +1,7 @@
+<div *ngIf="noticia">
+    <div *ngFor="let item of noticia">
+        <h2>Editando a Noticia: <span> {{ item.titulo}} </span></h2>
+        
+    </div>
+    <app-notice-form (onSubmit)="editHanlder($event)" [noticia]="noticia" [btnText]="btnText"></app-notice-form>
+</div>
